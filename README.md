@@ -1,2 +1,2 @@
-# SP26_H-H_Modeling
+# SP26_Hydrologic_and_Hydraulic_Modeling
 Final Project: WATER SYS MDLNG AND SIMULATION
