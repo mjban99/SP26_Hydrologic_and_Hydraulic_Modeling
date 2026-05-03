@@ -1,0 +1,158 @@
+{
+  "metadata": {
+    "site": "Upper Hafren flume (UHF, station 128)",
+    "region": "Plynlimon, mid-Wales, UK",
+    "crs_for_spatial_analysis": "OSGB36 / British National Grid (EPSG:27700)"
+  },
+  "fixed_parameters": {
+    "catchment_area_km2": 1.2186,
+    "L_channel_m": 5153.124352301558,
+    "B_width_m": 2.0,
+    "S_0_bed_slope": 0.07370808919270075,
+    "C_gw_mgL": 5.5,
+    "Q_base_m3s": 0.03
+  },
+  "calibration_prior_ranges": {
+    "hillslope": {
+      "K_s_m_s": [
+        1e-06,
+        3e-05
+      ],
+      "psi_m": [
+        0.05,
+        0.5
+      ],
+      "theta_d": [
+        0.05,
+        0.35
+      ],
+      "notes": "Rawls et al. (1983) for generic texture classes. Effective K_s at UHF is below pedo-transfer values because shallow subsurface stormflow through peat/podzol dominates (Kirchner & Neal 2013)."
+    }
+  },
+  "provenance": {
+    "area": {
+      "source": "plynlimon-subcatchment_boundaries.zip -> PlynlimonCatchments.shp",
+      "filter": "Subcatch contains 'Hafren'",
+      "crs": "PROJCS[\"OSGB_1936_Transverse_Mercator\",GEOGCS[\"OSGB36\",DATUM[\"Ordnance_Survey_of_Great_Britain_1936\",SPHEROID[\"Airy 1830\",6377563.396,299.3249646,AUTHORITY[\"EPSG\",\"7001\"]],AUTHORITY[\"EPSG\",\"6277\"]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Transverse_Mercator\"],PARAMETER[\"latitude_of_origin\",49],PARAMETER[\"central_meridian\",-2],PARAMETER[\"scale_factor\",0.999601272],PARAMETER[\"false_easting\",400000],PARAMETER[\"false_northing\",-100000],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+      "hafren_total_area_km2": 3.547405799890557,
+      "note": "UHF (Upper Hafren flume) area is a sub-portion of Hafren; precise value comes from DTM delineation below."
+    },
+    "channel_length": {
+      "source": "plynlimon-rivernetwork.zip -> PlynlimonRiverNetwork.shp",
+      "method": "clipped to DTM-delineated UHF polygon (1.22 km^2), sum of segment lengths",
+      "crs": "PROJCS[\"OSGB_1936_Transverse_Mercator\",GEOGCS[\"OSGB36\",DATUM[\"Ordnance_Survey_of_Great_Britain_1936\",SPHEROID[\"Airy 1830\",6377563.396,299.3249646,AUTHORITY[\"EPSG\",\"7001\"]],AUTHORITY[\"EPSG\",\"6277\"]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Transverse_Mercator\"],PARAMETER[\"latitude_of_origin\",49],PARAMETER[\"central_meridian\",-2],PARAMETER[\"scale_factor\",0.999601272],PARAMETER[\"false_easting\",400000],PARAMETER[\"false_northing\",-100000],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+      "total_length_m": 5153.124352301558,
+      "length_if_clipped_to_full_hafren_m": 18609.157459280093
+    },
+    "dtm_delineation_slope": {
+      "source": "plynlimon-dtm.zip",
+      "method": "pysheds D8: pit_fill -> depression_fill -> resolve_flats -> flowdir -> accumulation",
+      "outlet_row_col": [
+        93,
+        205
+      ],
+      "cell_size_m": 15.0,
+      "outlet_accumulation_cells": 5416,
+      "outlet_area_km2": 1.2186,
+      "bed_slope_S_0": 0.07370808919270075,
+      "empirical_uh": {
+        "t_hr": [
+          0.03333333333333333,
+          0.1,
+          0.16666666666666669,
+          0.23333333333333334,
+          0.3,
+          0.3666666666666667,
+          0.43333333333333335,
+          0.5,
+          0.5666666666666667,
+          0.6333333333333333,
+          0.7,
+          0.7666666666666666,
+          0.8333333333333334,
+          0.9,
+          0.9666666666666667,
+          1.0333333333333332,
+          1.1,
+          1.1666666666666665,
+          1.2333333333333334,
+          1.2999999999999998,
+          1.3666666666666667,
+          1.4333333333333331,
+          1.5,
+          1.5666666666666667,
+          1.6333333333333333,
+          1.7000000000000002,
+          1.7666666666666666,
+          1.8333333333333335,
+          1.9,
+          1.9666666666666668
+        ],
+        "uh_hr_inv": [
+          0.13293943870014768,
+          0.34619645494830126,
+          0.5871491875923189,
+          0.7810192023633676,
+          1.121676514032496,
+          1.351550960118168,
+          1.5980428360413585,
+          1.822378138847858,
+          2.0162481536189065,
+          1.6562038404726733,
+          1.2047636632200884,
+          0.8557976366322008,
+          0.7422451994091579,
+          0.29357459379615947,
+          0.24095273264401768,
+          0.21048744460856716,
+          0.03877400295420974,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "celerity_mps": 0.5,
+        "n_cells": 5416,
+        "max_flow_path_m": 1956.5790027001865,
+        "mean_flow_path_m": 938.6687631548106,
+        "peak_hr": 0.5666666666666667
+      }
+    },
+    "soil": {
+      "source": "plynlimon-soil_parentmaterials.zip",
+      "attribute_used": "Descript",
+      "fractions_by_area": {
+        "Boulder Clay (till)": 0.0044,
+        "Colluvium": 0.0118,
+        "Hilltop Head, bare rock, etc": 0.9838
+      },
+      "prior_ranges_for_calibration": {
+        "K_s_m_s": [
+          1e-06,
+          3e-05
+        ],
+        "psi_m": [
+          0.05,
+          0.5
+        ],
+        "theta_d": [
+          0.05,
+          0.35
+        ],
+        "notes": "Rawls et al. (1983) for generic texture classes. Effective K_s at UHF is below pedo-transfer values because shallow subsurface stormflow through peat/podzol dominates (Kirchner & Neal 2013)."
+      }
+    },
+    "width": "2 m rectangular flume section at UHF. Source: Plynlimon flume specifications (Neal et al. 1997; CEH Plynlimon site metadata, flow_site_metadata.csv)",
+    "C_gw": "Pre-storm stream Cl at UHF baseflow. Source: Neal & Kirchner (2000), HESS 4:295-310.",
+    "Q_base": "Pre-storm observed Q at UHF for 2008-06-24 event window."
+  }
+}
