@@ -48,14 +48,17 @@ If you want to **read** the algorithms, please start with the notebooks (`02_mod
 ## Reproducing the report
 Stage 1: build the prior MC cache (LHS 2000 -> behavioural filter -> 500 working ensemble):
 ```bash
-    python scripts/run_prior_mc.py --storm-id 33 --n-lhs 2000 --n-workers 9```
+    python scripts/run_prior_mc.py --storm-id 33 --n-lhs 2000 --n-workers 9
+```
     
 Stage 2: run the SIR sweep (14 windows x 2 scenarios):
 ```bash
-    python scripts/run_sir_sweep.py --storm-id 33 --n-workers 9```
+    python scripts/run_sir_sweep.py --storm-id 33 --n-workers 9
+```
 
 Reproduce Appendix C (3-layer vs simplified model):
 ```bash
-    python scripts/reproduce_appendix_C.py --storm-id 33 --n-lhs 2000 --n-workers 9```
+    python scripts/reproduce_appendix_C.py --storm-id 33 --n-lhs 2000 --n-workers 9
+```
     
 Then open `notebooks/05_results_and_figures.ipynb` to regenerate Figures 3, 4, D, E and Tables B1 from the manuscript.
